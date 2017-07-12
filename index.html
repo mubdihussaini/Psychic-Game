@@ -19,22 +19,24 @@ var ranNum;
 var UserChoice;
 window.onload = function() { 
 	CompChoice(); 
-
-	
 }
 
-document.onkeyup = function(event){ UserChoice = event.key
-return (UserChoice);
-}
 
-alert(UserChoice);
+document.addEventListener("keypress",UsersKey);
+	function UsersKey(event){
+		 var UserChoice = event.key;
+		console.log(UserChoice);
+	}
 
-function CompChoice()
- {
+
+
+function CompChoice() {
   ranNum = Math.floor(Math.random()*10)+1;
-
 };
 
+window.onkeyup= function(){
+	Game();
+}
 
 function Game( ){
 	if(UserChoice === ranNum) {
